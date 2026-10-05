@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vimana | Ultra-Luxury Residences & Heritage Estates India</title>
+
+  <!-- Google Fonts: Cinzel Decorative/Cormorant + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#07090E',
+            obsidian: '#0D111A',
+            charcoal: '#161C28',
+            terracotta: {
+              300: '#F4BA8E',
+              400: '#E28E54',
+              500: '#C86A2E',
+              600: '#A44F1C'
+            },
+            champagne: {
+              100: '#FAF3E0',
+              200: '#F3E5C2',
+              300: '#E8D29A',
+              400: '#D4AF37'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cinzel"', 'serif'],
+            editorial: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Architectural Editorial styling */
+    body {
+      background-color: #07090E;
+      color: #E2E8F0;
+    }
+    .editorial-border {
+      border: 1px solid rgba(226, 142, 84, 0.22);
+    }
+    .editorial-border-light {
+      border: 1px solid rgba(243, 229, 194, 0.12);
+    }
+    .glass-editorial {
+      background: rgba(13, 17, 26, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .gradient-copper {
+      background: linear-gradient(135deg, #F4BA8E 0%, #C86A2E 50%, #8A3B12 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-gold {
+      background: linear-gradient(135deg, #FFF6D6 0%, #D4AF37 55%, #967512 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .architectural-grid {
+      background-image: radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #07090E;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #252F43;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C86A2E;
+    }
+    /* Range input styling */
+    input[type=range] {
+      accent-color: #E28E54;
+    }
+  
+    /* Vimana Atelier Layer */
+    html { scroll-behavior:smooth; }
+    body { background: radial-gradient(circle at 20% 0%, rgba(200,106,46,.06), transparent 28%), #07090E; }
+    .page-loader { position:fixed; inset:0; z-index:100; background:#07090E; display:grid; place-items:center; transition:opacity .7s ease, visibility .7s ease; }
+    .page-loader.done { opacity:0; visibility:hidden; pointer-events:none; }
+    .loader-mark { width:74px;height:74px;border:1px solid rgba(226,142,84,.45);display:grid;place-items:center;position:relative; }
+    .loader-mark:before { content:''; width:44px;height:44px;border:1px solid rgba(212,175,55,.55);transform:rotate(45deg);position:absolute; animation:spin 2.2s linear infinite; }
+    .loader-mark span { font-family:Cinzel,serif;color:#f3e5c2;font-size:18px; }
+    @keyframes spin { to{transform:rotate(405deg)} }
+    .scroll-progress { position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,#c86a2e,#d4af37);z-index:110; }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s cubic-bezier(.22,1,.36,1); }
+    .reveal.in { opacity:1; transform:none; }
+    .luxury-hover { transition:transform .6s cubic-bezier(.22,1,.36,1), border-color .4s ease, box-shadow .6s ease; }
+    .luxury-hover:hover { transform:translateY(-7px); border-color:rgba(226,142,84,.5)!important; box-shadow:0 24px 70px rgba(0,0,0,.32); }
+    .image-sheen { position:relative; overflow:hidden; }
+    .image-sheen:after { content:''; position:absolute; inset:0; background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.10) 45%,transparent 65%); transform:translateX(-120%); transition:transform .9s ease; pointer-events:none; }
+    .image-sheen:hover:after { transform:translateX(120%); }
+    .noise { position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:90;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");}
+    .floating-orb { position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(200,106,46,.07);filter:blur(80px);animation:floatOrb 12s ease-in-out infinite;pointer-events:none; }
+    @keyframes floatOrb { 50%{transform:translate3d(35px,-25px,0) scale(1.08);} }
+    .magnetic { transition:transform .2s ease; }
+    @media (prefers-reduced-motion:reduce){ *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none;} }
+  </style>
+</head>
+
+  <div id="pageLoader" class="page-loader"><div class="loader-mark"><span>V</span></div></div>
+  <div class="scroll-progress" id="scrollProgress"></div><div class="noise"></div>
+<body class="selection:bg-terracotta-500 selection:text-white antialiased overflow-x-hidden font-sans">
+
+  <!-- Live Real Estate & Capital Market Ticker -->
+  <div class="bg-midnight border-b border-white/10 text-xs py-2 px-4 overflow-hidden relative z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      <div class="flex items-center gap-2 shrink-0">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-[10px] tracking-widest font-mono text-terracotta-300 uppercase font-bold">VIMANA MARKET PULSE &bull; Q3 2026</span>
+      </div>
+      <div class="flex items-center gap-8 text-[11px] font-mono text-slate-400 overflow-x-auto whitespace-nowrap no-scrollbar py-0.5">
+        <span>BSE REALTY: <strong class="text-emerald-400">7,482.10 (+1.84%)</strong></span>
+        <span>WORLI CAP RATE: <strong class="text-white">₹78,500/sq.ft</strong></span>
+        <span>IND-BENGALURU TECH: <strong class="text-emerald-400">14.6% YoY</strong></span>
+        <span>GURGAON GOLF COURSE: <strong class="text-white">₹38,200/sq.ft</strong></span>
+        <span>GOA ASSAGAO VILLAS: <strong class="text-emerald-400">+22.4% Capital Growth</strong></span>
+      </div>
+      <div class="hidden md:flex items-center gap-3 shrink-0 text-[11px]">
+        <span class="text-slate-400 font-medium">CREDAI & RERA Certified</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Architectural Navigation -->
+  <header class="sticky top-0 z-40 glass-editorial border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo Branding -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="w-10 h-10 border border-terracotta-400/50 flex items-center justify-center relative bg-charcoal/80 group-hover:border-terracotta-300 transition-colors">
+          <div class="w-7 h-7 border border-champagne-400/60 rotate-45 flex items-center justify-center transition-transform group-hover:rotate-90 duration-500">
+            <span class="font-serif text-[11px] font-extrabold text-champagne-300 -rotate-45">V</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-white">
+            VIMANA<span class="text-terracotta-400 font-light">.</span>
+          </span>
+          <span class="block text-[9px] tracking-[0.3em] uppercase text-champagne-300/80 font-mono -mt-1">
+            Private Estates & Havelis
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-xs uppercase tracking-widest text-slate-300 font-medium">
+        <a href="portfolio.html" class="hover:text-terracotta-300 transition-colors">The Portfolio</a>
+        <a href="advisory.html#nri-desk" class="hover:text-terracotta-300 transition-colors flex items-center gap-1.5">
+          <span>NRI Advisory</span>
+          <span class="px-1.5 py-0.2 bg-terracotta-500/20 text-terracotta-300 border border-terracotta-400/30 text-[9px] font-mono">FEMA</span>
+        </a>
+        <a href="advisory.html#finance-suite" class="hover:text-terracotta-300 transition-colors">Stamp Duty & EMI</a>
+        <a href="markets.html#neighborhood-intelligence" class="hover:text-terracotta-300 transition-colors">Micro-Markets</a>
+      </nav>
+
+      <!-- Right Controls: Currency Switcher & VIP Modal -->
+      <div class="flex items-center gap-4">
+        <!-- Currency Dropdown -->
+        <div class="flex items-center bg-charcoal border border-white/10 rounded-none px-2.5 py-1.5 text-xs font-mono">
+          <label for="currencySelector" class="text-slate-400 text-[10px] mr-2">CURR:</label>
+          <select id="currencySelector" onchange="changeCurrency(this.value)" class="bg-transparent text-amber-200 focus:outline-none cursor-pointer">
+            <option value="INR" class="bg-obsidian text-white">₹ INR (Crores)</option>
+            <option value="USD" class="bg-obsidian text-white">$ USD</option>
+            <option value="AED" class="bg-obsidian text-white">AED (UAE Dirham)</option>
+          </select>
+        </div>
+
+        <!-- Schedule Visit Trigger -->
+        <button onclick="openVipModal('General Concierge Inquiry')" class="hidden sm:flex items-center gap-2 px-4 py-2.5 border border-terracotta-400 text-terracotta-300 hover:bg-terracotta-500 hover:text-white transition-all text-xs tracking-widest uppercase font-semibold">
+          <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+          <span>Schedule VIP Tour</span>
+        </button>
+
+        <!-- Mobile Drawer Toggle -->
+        <button onclick="toggleMobileNav()" class="lg:hidden p-2 text-slate-300 hover:text-white" aria-label="Toggle navigation">
+          <i data-lucide="menu" id="mobileMenuOpenIcon" class="w-6 h-6"></i>
+          <i data-lucide="x" id="mobileMenuCloseIcon" class="w-6 h-6 hidden"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Nav Flyout -->
+    <div id="mobileNavFlyout" class="hidden lg:hidden bg-obsidian border-b border-white/10 px-6 py-6 space-y-4 text-sm font-mono uppercase tracking-wider">
+      <a href="portfolio.html" onclick="toggleMobileNav()" class="block text-slate-300 hover:text-terracotta-300">The Portfolio</a>
+      <a href="advisory.html#nri-desk" onclick="toggleMobileNav()" class="block text-slate-300 hover:text-terracotta-300">NRI Wealth & FEMA</a>
+      <a href="advisory.html#finance-suite" onclick="toggleMobileNav()" class="block text-slate-300 hover:text-terracotta-300">Stamp Duty & Loan Calculator</a>
+      <a href="markets.html#neighborhood-intelligence" onclick="toggleMobileNav()" class="block text-slate-300 hover:text-terracotta-300">Micro-Markets Comparison</a>
+      <div class="pt-4 border-t border-white/10">
+        <button onclick="openVipModal('General Concierge Inquiry'); toggleMobileNav()" class="w-full py-3 border border-terracotta-400 text-terracotta-300 text-center font-bold">
+          Schedule Chauffeur / VR Tour
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section: Architectural Split Layout -->
+  <section class="relative min-h-[92vh] flex items-center architectural-grid border-b border-white/10 overflow-hidden reveal">
+    <!-- Ambient backdrops -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-terracotta-600/10 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute bottom-10 right-10 w-[500px] h-[500px] bg-champagne-400/5 rounded-full blur-[160px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Editorial Copy (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-3 border border-terracotta-400/30 px-3.5 py-1.5 bg-charcoal/40 text-[11px] font-mono tracking-widest text-terracotta-300 uppercase">
+            <span class="w-1.5 h-1.5 bg-terracotta-400"></span>
+            <span>Architectural Rareties & Heritage Sanctuaries</span>
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-white tracking-tight leading-[1.08]">
+            Inhabiting The <br>
+            <span class="font-editorial italic font-normal text-champagne-200">Sublime Heights</span> <br>
+            Of Modern Bharat.
+          </h1>
+
+          <p class="text-slate-300 text-base sm:text-lg max-w-xl font-light leading-relaxed">
+            From centuries-old restored Goan courtyard palácios to ocean-front cantilevered duplexes on Mumbai’s Arabian shoreline. 100% verified clear titles & Vastu audits for generational wealth.
+          </p>
+
+          <!-- Interactive Filter Console -->
+          <div class="p-4 sm:p-5 bg-obsidian border border-white/15 max-w-2xl mt-8 shadow-2xl space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div>
+                <label class="block text-[10px] uppercase font-mono tracking-widest text-slate-400 mb-1">Region</label>
+                <select id="heroRegionSelect" class="w-full bg-charcoal text-white text-xs border border-white/10 px-3 py-2.5 focus:border-terracotta-400 focus:outline-none">
+                  <option value="all">Pan-India (All Regions)</option>
+                  <option value="Mumbai">Mumbai (Worli, Bandra, Juhu)</option>
+                  <option value="Bengaluru">Bengaluru (Indiranagar, Koramangala)</option>
+                  <option value="Delhi NCR">Delhi NCR (Golf Course Rd, Chhatarpur)</option>
+                  <option value="Goa">Goa (Assagao, Moira, Aldona)</option>
+                  <option value="Hyderabad">Hyderabad (Jubilee Hills, Kokapet)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-[10px] uppercase font-mono tracking-widest text-slate-400 mb-1">Typology</label>
+                <select id="heroTypologySelect" class="w-full bg-charcoal text-white text-xs border border-white/10 px-3 py-2.5 focus:border-terracotta-400 focus:outline-none">
+                  <option value="all">All Typologies</option>
+                  <option value="Sky Villa">Sky Villas & Penthouses</option>
+                  <option value="Courtyard Estate">Heritage Courtyard Estates</option>
+                  <option value="Gated Mansion">Gated Golf Mansions</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-[10px] uppercase font-mono tracking-widest text-slate-400 mb-1">Max Capital (INR)</label>
+                <select id="heroBudgetSelect" class="w-full bg-charcoal text-white text-xs border border-white/10 px-3 py-2.5 focus:border-terracotta-400 focus:outline-none">
+                  <option value="all">Any Reserve</option>
+                  <option value="5cr">Up to ₹5.00 Crore</option>
+                  <option value="15cr">Up to ₹15.00 Crore</option>
+                  <option value="50cr">₹15.00 Cr – ₹60.00 Cr+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 border-t border-white/5">
+              <label class="flex items-center gap-2 cursor-pointer text-xs text-slate-300 font-mono">
+                <input type="checkbox" id="heroVastuOnly" class="accent-terracotta-400 w-4 h-4">
+                <span>Strict Vastu Ishanya (North-East) Compliant Only</span>
+              </label>
+
+              <button onclick="applyMainFilter()" class="w-full sm:w-auto px-6 py-2.5 bg-gradient-to-r from-terracotta-500 to-terracotta-600 hover:from-terracotta-400 hover:to-terracotta-500 text-white font-mono text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2 transition">
+                <i data-lucide="search" class="w-3.5 h-3.5"></i>
+                <span>Explore Showcase</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Micro specs -->
+          <div class="flex items-center gap-6 pt-2 text-xs font-mono text-slate-400">
+            <div><span class="text-white font-bold">148+</span> Rare Estates</div>
+            <div class="w-px h-4 bg-white/10"></div>
+            <div><span class="text-white font-bold">₹8,400 Cr+</span> Audited Assets</div>
+            <div class="w-px h-4 bg-white/10"></div>
+            <div><span class="text-terracotta-300 font-bold">Zero</span> Brokerage Model</div>
+          </div>
+        </div>
+
+        <!-- Right Curated Highlight: Property of the Month (5 Cols) -->
+        <div class="lg:col-span-5">
+          <div class="relative bg-obsidian border border-terracotta-400/40 p-3 group luxury-hover reveal">
+            <!-- Property of the Month Tag -->
+            <div class="absolute -top-3.5 left-6 bg-terracotta-500 text-white text-[10px] font-mono tracking-widest uppercase px-3 py-1 font-bold z-10 shadow-lg">
+              Estate of the Month &bull; Mumbai
+            </div>
+
+            <!-- Image Container -->
+            <div class="relative h-[440px] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" 
+                   alt="Worli Sky Villa" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.85]">
+              
+              <div class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-transparent"></div>
+
+              <!-- Overlaid Details -->
+              <div class="absolute bottom-5 left-5 right-5 space-y-2">
+                <div class="flex items-center justify-between text-xs font-mono text-champagne-300">
+                  <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-terracotta-400"></i> Worli Sea Face, Mumbai</span>
+                  <span class="bg-black/60 px-2 py-0.5 border border-white/10">Ready For Interior Fitout</span>
+                </div>
+                <h3 class="font-serif text-2xl text-white font-bold leading-tight">The Aurelia Horizon Triplex</h3>
+                <div class="flex items-center justify-between pt-2 border-t border-white/20 text-xs">
+                  <div>
+                    <span class="text-[10px] font-mono uppercase text-slate-400 block">Reserve Valuation</span>
+                    <span class="text-xl font-serif text-terracotta-300 font-bold" id="heroHighlightPrice">₹38.50 Cr</span>
+                  </div>
+                  <button onclick="openVipModal('The Aurelia Horizon Triplex (Worli)')" class="px-4 py-2 bg-white text-midnight hover:bg-champagne-200 transition font-mono text-xs font-bold uppercase tracking-wider">
+                    Inquire Private Dossier
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 bg-charcoal/50 flex items-center justify-between text-[11px] font-mono text-slate-400">
+              <span>9,200 sq.ft &bull; 6 Beds &bull; Private Plunge Pool</span>
+              <span class="text-emerald-400">100% Vastu Certified</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Portfolio Showcase Section -->
+  <section id="property-matrix" class="py-24 bg-midnight relative border-b border-white/10 reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header with Category Tabs -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-[11px] font-mono tracking-[0.25em] text-terracotta-400 uppercase font-semibold block mb-2">Curated Reserves</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight">The Vimana Collection</h2>
+          <p class="text-slate-400 text-sm max-w-xl mt-2 font-light">Each sanctuary has been verified with 30-year mother-deed legal audits, structural provenance, and direct builder mandatories.</p>
+        </div>
+
+        <!-- Filter Pill Tabs -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button onclick="filterByTab('all')" class="category-pill active px-4 py-2 border border-terracotta-400 bg-terracotta-500 text-white font-mono text-xs uppercase tracking-wider transition">All Estates</button>
+          <button onclick="filterByTab('Sky Villa')" class="category-pill px-4 py-2 border border-white/10 bg-charcoal text-slate-300 hover:text-white font-mono text-xs uppercase tracking-wider transition">Sky Mansions</button>
+          <button onclick="filterByTab('Courtyard Estate')" class="category-pill px-4 py-2 border border-white/10 bg-charcoal text-slate-300 hover:text-white font-mono text-xs uppercase tracking-wider transition">Goa & Rajasthan Heritage</button>
+          <button onclick="filterByTab('Gated Mansion')" class="category-pill px-4 py-2 border border-white/10 bg-charcoal text-slate-300 hover:text-white font-mono text-xs uppercase tracking-wider transition">Golf & Tech Corridors</button>
+        </div>
+      </div>
+
+      <!-- Properties Grid -->
+      <div id="estatesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Injected via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NRI Wealth & FEMA Advisory Suite -->
+  <section id="nri-desk" class="py-24 bg-obsidian relative border-b border-white/10 architectural-grid reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Explanatory Left (5 cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-champagne-300">
+            <i data-lucide="globe-2" class="w-4 h-4 text-terracotta-400"></i>
+            <span>Global Indian Private Desk</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-4xl text-white font-bold leading-tight">
+            NRI Capital Deployment &amp; High-Yield Indian Real Estate
+          </h2>
+
+          <p class="text-slate-300 text-sm leading-relaxed font-light">
+            With favorable NRE/NRO remittance routes, clear FEMA guidelines, and rapid infrastructure expansion, prime Indian residential property is outperforming global yields in London, Dubai, and Singapore.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <div class="p-3 bg-charcoal border border-white/10 flex items-start gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+              <div>
+                <h4 class="text-xs font-bold text-white uppercase font-mono">100% Repatriation Compliant</h4>
+                <p class="text-[11px] text-slate-400 mt-0.5">Principal and capital gains repatriation under RBI Form 15CA/CB protocols through NRE accounts.</p>
+              </div>
+            </div>
+
+            <div class="p-3 bg-charcoal border border-white/10 flex items-start gap-3">
+              <i data-lucide="shield" class="w-5 h-5 text-terracotta-400 shrink-0 mt-0.5"></i>
+              <div>
+                <h4 class="text-xs font-bold text-white uppercase font-mono">Dual Power of Attorney (PoA) Desk</h4>
+                <p class="text-[11px] text-slate-400 mt-0.5">Complete registration execution without requiring physical presence in India through Indian Consulate stamped PoAs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive NRI ROI Calculator (7 cols) -->
+        <div class="lg:col-span-7 bg-charcoal border border-terracotta-400/30 p-6 sm:p-8 relative">
+          <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+            <div>
+              <h3 class="font-serif text-xl font-bold text-white">NRI Capital Appreciation & Yield Forecaster</h3>
+              <p class="text-[11px] font-mono text-terracotta-300">Target Micro-Markets: BKC Mumbai, Indiranagar Bengaluru, Kokapet Hyderabad</p>
+            </div>
+            <i data-lucide="bar-chart-3" class="w-6 h-6 text-terracotta-400"></i>
+          </div>
+
+          <div class="space-y-6">
+            <!-- Investment Value Slider -->
+            <div>
+              <div class="flex justify-between text-xs font-mono mb-2">
+                <span class="text-slate-300">Initial Asset Allocation:</span>
+                <span id="nriAllocationDisplay" class="font-bold text-terracotta-300">₹10.00 Cr ($1.20M USD)</span>
+              </div>
+              <input type="range" id="nriCapitalSlider" min="20000000" max="400000000" step="10000000" value="100000000" class="w-full h-1.5 bg-slate-700" oninput="calculateNriRoi()">
+              <div class="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
+                <span>₹2 Cr ($240k)</span>
+                <span>₹20 Cr ($2.4M)</span>
+                <span>₹40 Cr+ ($4.8M)</span>
+              </div>
+            </div>
+
+            <!-- Holding Period -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1">Horizon Duration</label>
+                <select id="nriHorizonSelect" onchange="calculateNriRoi()" class="w-full bg-obsidian border border-white/10 text-xs px-3 py-2 text-white font-mono focus:border-terracotta-400 focus:outline-none">
+                  <option value="3">3 Years (Short-Cycle Appreciation)</option>
+                  <option value="5" selected>5 Years (Standard Wealth Horizon)</option>
+                  <option value="10">10 Years (Generational Real Asset)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1">Target Indian Micro-Market</label>
+                <select id="nriMarketSelect" onchange="calculateNriRoi()" class="w-full bg-obsidian border border-white/10 text-xs px-3 py-2 text-white font-mono focus:border-terracotta-400 focus:outline-none">
+                  <option value="13.5">Bengaluru Tech Hubs (13.5% CAGR)</option>
+                  <option value="11.2">Mumbai Prime Luxury (11.2% CAGR)</option>
+                  <option value="16.0">Goa Holiday Villa Rentals (16.0% CAGR)</option>
+                  <option value="14.8">Hyderabad Financial District (14.8% CAGR)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10 text-center">
+              <div class="p-3 bg-obsidian border border-white/5">
+                <span class="text-[10px] font-mono text-slate-400 uppercase block">Expected Value At Exit</span>
+                <span id="nriExitVal" class="text-lg font-serif font-bold text-white mt-1 block">₹19.25 Cr</span>
+                <span id="nriExitUsd" class="text-[10px] font-mono text-terracotta-300">~$2.31M USD</span>
+              </div>
+              <div class="p-3 bg-obsidian border border-white/5">
+                <span class="text-[10px] font-mono text-slate-400 uppercase block">Estimated Gross Rental Income</span>
+                <span id="nriRentalTotal" class="text-lg font-serif font-bold text-emerald-400 mt-1 block">₹1.85 Cr</span>
+                <span class="text-[10px] font-mono text-slate-400">Avg 3.7% annual lease</span>
+              </div>
+              <div class="p-3 bg-obsidian border border-white/5">
+                <span class="text-[10px] font-mono text-slate-400 uppercase block">Total Net ROI Gain</span>
+                <span id="nriTotalRoi" class="text-lg font-serif font-bold text-champagne-300 mt-1 block">+111.0%</span>
+                <span class="text-[10px] font-mono text-slate-400">Capital + Yield</span>
+              </div>
+            </div>
+
+            <button onclick="openVipModal('NRI Wealth Structuring Consultation')" class="w-full py-3 bg-white text-midnight hover:bg-champagne-200 transition font-mono text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2">
+              <i data-lucide="file-text" class="w-4 h-4"></i>
+              <span>Request Detailed FEMA Tax Briefing</span>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- State-Specific Stamp Duty & Home Finance Suite -->
+  <section id="finance-suite" class="py-24 bg-midnight relative border-b border-white/10 reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-mono tracking-widest text-terracotta-400 uppercase block mb-1">Clear Statutory Transparency</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Indian Stamp Duty &amp; EMI Estimator</h2>
+        <p class="text-slate-400 text-sm mt-2">Accurately account for state-level registry fees (Maharashtra, Karnataka, Delhi, Telangana) and customize financing rates.</p>
+      </div>
+
+      <div class="bg-obsidian border border-white/10 p-6 sm:p-10 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          
+          <!-- Controls Left (7 Cols) -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <!-- Property Valuation -->
+            <div>
+              <div class="flex justify-between items-center text-xs font-mono mb-2">
+                <label class="text-slate-300">Property Agreement Value:</label>
+                <div class="flex items-center text-terracotta-300 font-bold bg-charcoal px-3 py-1 border border-white/10">
+                  <span class="mr-1">₹</span>
+                  <input type="number" id="stampPropValue" value="45000000" min="5000000" max="500000000" step="1000000" class="w-32 bg-transparent text-right text-white focus:outline-none" oninput="calculateStampAndEmi()">
+                </div>
+              </div>
+              <input type="range" id="stampValueSlider" min="5000000" max="250000000" step="2500000" value="45000000" class="w-full h-1.5 bg-slate-800" oninput="syncStampFromSlider(this.value)">
+              <div class="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
+                <span>₹50 Lakh</span>
+                <span id="sliderValueInCr" class="text-champagne-300">₹4.50 Crore</span>
+                <span>₹25.00 Crore</span>
+              </div>
+            </div>
+
+            <!-- State Selector for Stamp Duty -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1">State Jurisdiction</label>
+                <select id="stateStampSelect" onchange="calculateStampAndEmi()" class="w-full bg-charcoal border border-white/10 text-xs px-3 py-2 text-white font-mono focus:border-terracotta-400 focus:outline-none">
+                  <option value="MH_M">Maharashtra (Mumbai - 6.0%)</option>
+                  <option value="KA">Karnataka (Bengaluru - 5.0% + Cess)</option>
+                  <option value="DL">Delhi NCR (Male: 6.0% / Female: 4.0%)</option>
+                  <option value="TS">Telangana (Hyderabad - 7.5%)</option>
+                  <option value="GOA">Goa (Assagao/Panaji - 4.5%)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1">Down Payment Ratio</label>
+                <select id="downPaymentSelect" onchange="calculateStampAndEmi()" class="w-full bg-charcoal border border-white/10 text-xs px-3 py-2 text-white font-mono focus:border-terracotta-400 focus:outline-none">
+                  <option value="0.20">20% Self-Funded (Standard)</option>
+                  <option value="0.30">30% Self-Funded</option>
+                  <option value="0.50">50% Self-Funded</option>
+                  <option value="1.00">100% Full Capital (Zero Debt)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Loan Rate & Tenure -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1">HNI Loan Interest Rate (%)</label>
+                <input type="number" id="loanInterestInput" value="8.35" min="7.5" max="12.0" step="0.05" class="w-full bg-charcoal border border-white/10 text-xs px-3 py-2 text-white font-mono focus:border-terracotta-400 focus:outline-none" oninput="calculateStampAndEmi()">
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1">Tenure (Years)</label>
+                <select id="loanTenureSelect" onchange="calculateStampAndEmi()" class="w-full bg-charcoal border border-white/10 text-xs px-3 py-2 text-white font-mono focus:border-terracotta-400 focus:outline-none">
+                  <option value="10">10 Years</option>
+                  <option value="15">15 Years</option>
+                  <option value="20" selected>20 Years</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Total Breakdown Right (5 Cols) -->
+          <div class="lg:col-span-5 bg-charcoal p-6 border border-white/10 flex flex-col justify-between space-y-6">
+            <div>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400">Total Capital Outlay Estimate</span>
+              <div id="statutoryGrandTotal" class="font-serif text-3xl font-bold text-white mt-1">₹4.82 Cr</div>
+              <span class="text-[10px] text-terracotta-300 font-mono">Includes Base + Stamp + Registration</span>
+            </div>
+
+            <div class="space-y-3 text-xs font-mono">
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-slate-400">Base Agreement:</span>
+                <span id="statutoryBasePrice" class="text-white font-bold">₹4.50 Cr</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-slate-400">State Stamp Duty:</span>
+                <span id="statutoryStampDuty" class="text-terracotta-300 font-bold">₹27.00 Lakh</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-slate-400">Registration &amp; Surcharges:</span>
+                <span id="statutoryRegCharges" class="text-slate-200">₹30,000</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-slate-400">Monthly EMI (If Financed):</span>
+                <span id="statutoryMonthlyEmi" class="text-emerald-400 font-bold">₹3,09,240 /mo</span>
+              </div>
+            </div>
+
+            <button onclick="openVipModal('Statutory Legal & Loan Sanction Desk')" class="w-full py-3 bg-terracotta-500 hover:bg-terracotta-400 text-white font-mono text-xs uppercase tracking-widest font-bold transition">
+              Initiate Bank &amp; Title Verification
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Micro-Market Comparative Matrix -->
+  <section id="neighborhood-intelligence" class="py-24 bg-obsidian relative border-b border-white/10 reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-mono tracking-widest text-terracotta-400 uppercase block mb-1">Micro-Market Analytics</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Indian Luxury Corridors Compared</h2>
+        </div>
+        <p class="text-slate-400 text-xs font-mono max-w-sm text-right hidden md:block">
+          Aggregated live data from registration authorities, highway authorities, and social index metrics.
+        </p>
+      </div>
+
+      <!-- Comparative Table Container -->
+      <div class="overflow-x-auto border border-white/10">
+        <table class="w-full text-left text-xs font-mono">
+          <thead class="bg-charcoal text-slate-300 uppercase tracking-wider text-[11px] border-b border-white/10">
+            <tr>
+              <th class="p-4">Micro-Market &amp; City</th>
+              <th class="p-4">Average Capital / sq.ft</th>
+              <th class="p-4">3-Yr Price Growth</th>
+              <th class="p-4">Airport Transit Time</th>
+              <th class="p-4">Green Cover &amp; AQI Buffer</th>
+              <th class="p-4 text-right">Concierge Audit</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 bg-midnight text-slate-300">
+            <tr class="hover:bg-charcoal/60 transition">
+              <td class="p-4 font-bold text-white flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                Worli &amp; Lower Parel (Mumbai)
+              </td>
+              <td class="p-4 text-terracotta-300 font-bold">₹68,000 – ₹1,10,000</td>
+              <td class="p-4 text-emerald-400">+34.8%</td>
+              <td class="p-4">35 mins (via Coastal Road)</td>
+              <td class="p-4 text-amber-300">Moderate &bull; Sea Breeze Index</td>
+              <td class="p-4 text-right">
+                <button onclick="openVipModal('Worli Market Intelligence Report')" class="text-terracotta-400 hover:underline">Get Micro-Dossier &rarr;</button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-charcoal/60 transition">
+              <td class="p-4 font-bold text-white flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                Indiranagar &amp; Defense Colony (Bengaluru)
+              </td>
+              <td class="p-4 text-terracotta-300 font-bold">₹19,500 – ₹32,000</td>
+              <td class="p-4 text-emerald-400">+42.1%</td>
+              <td class="p-4">45 mins (via Bellary Rd Express)</td>
+              <td class="p-4 text-emerald-400">High &bull; Tree Canopy Index</td>
+              <td class="p-4 text-right">
+                <button onclick="openVipModal('Indiranagar Intelligence Report')" class="text-terracotta-400 hover:underline">Get Micro-Dossier &rarr;</button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-charcoal/60 transition">
+              <td class="p-4 font-bold text-white flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                Golf Course Road (Gurgaon, Delhi NCR)
+              </td>
+              <td class="p-4 text-terracotta-300 font-bold">₹28,000 – ₹55,000</td>
+              <td class="p-4 text-emerald-400">+48.5%</td>
+              <td class="p-4">25 mins (via IGI T3 Express)</td>
+              <td class="p-4 text-amber-300">Aravalli Ridge View Buffer</td>
+              <td class="p-4 text-right">
+                <button onclick="openVipModal('DLF Golf Course Report')" class="text-terracotta-400 hover:underline">Get Micro-Dossier &rarr;</button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-charcoal/60 transition">
+              <td class="p-4 font-bold text-white flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                Assagao &amp; Moira (North Goa)
+              </td>
+              <td class="p-4 text-terracotta-300 font-bold">₹22,000 – ₹38,000</td>
+              <td class="p-4 text-emerald-400">+56.2%</td>
+              <td class="p-4">30 mins (via MOPA Manohar Airport)</td>
+              <td class="p-4 text-emerald-400">Pristine Forest &amp; Coastal</td>
+              <td class="p-4 text-right">
+                <button onclick="openVipModal('Goa Heritage Estate Report')" class="text-terracotta-400 hover:underline">Get Micro-Dossier &rarr;</button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-charcoal/60 transition">
+              <td class="p-4 font-bold text-white flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                Jubilee Hills &amp; Kokapet (Hyderabad)
+              </td>
+              <td class="p-4 text-terracotta-300 font-bold">₹13,500 – ₹24,000</td>
+              <td class="p-4 text-emerald-400">+39.0%</td>
+              <td class="p-4">20 mins (via Nehru ORR)</td>
+              <td class="p-4 text-emerald-400">Gandipet Lake Front Buffer</td>
+              <td class="p-4 text-right">
+                <button onclick="openVipModal('Hyderabad Luxury Report')" class="text-terracotta-400 hover:underline">Get Micro-Dossier &rarr;</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Floor Plan & Property Explorer Modal -->
+  <div id="propertyDetailModal" class="fixed inset-0 z-50 hidden bg-midnight/90 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+    <div class="relative w-full max-w-4xl bg-obsidian border border-terracotta-400/40 p-6 sm:p-8 my-8 shadow-2xl">
+      <button onclick="closePropertyDetailModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-2">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <div class="relative h-72 sm:h-80 overflow-hidden border border-white/10">
+            <img id="modalEstateImg" src="" alt="Estate View" class="w-full h-full object-cover">
+          </div>
+          <div class="mt-4 p-3 bg-charcoal border border-white/5 text-xs font-mono space-y-1">
+            <div class="text-terracotta-300 font-bold flex items-center gap-1">
+              <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+              <span id="modalVastuDetail">100% Vastu Ishanya (North-East)</span>
+            </div>
+            <div class="text-slate-400" id="modalReraDetail">RERA: Verified</div>
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-between">
+          <div>
+            <span class="text-[10px] font-mono uppercase tracking-widest text-terracotta-400 block" id="modalEstateCity">Mumbai</span>
+            <h3 class="font-serif text-2xl font-bold text-white mt-1" id="modalEstateTitle">Estate Name</h3>
+            <div class="text-2xl font-serif text-terracotta-300 font-bold mt-2" id="modalEstatePrice">₹0.00 Cr</div>
+
+            <p class="text-slate-300 text-xs mt-3 leading-relaxed" id="modalEstateDesc">
+              Architectural residence designed with double-height ceiling voids, private elevator lift, imported Italian marble, and unobstructed horizons.
+            </p>
+
+            <div class="grid grid-cols-2 gap-3 my-4 py-3 border-y border-white/10 text-xs font-mono">
+              <div>
+                <span class="text-slate-500 block text-[10px]">Carpet Area:</span>
+                <span class="text-white font-bold" id="modalCarpetArea">0 sq.ft</span>
+              </div>
+              <div>
+                <span class="text-slate-500 block text-[10px]">Super Built-up:</span>
+                <span class="text-white font-bold" id="modalBuiltArea">0 sq.ft</span>
+              </div>
+              <div>
+                <span class="text-slate-500 block text-[10px]">Configuration:</span>
+                <span class="text-white font-bold" id="modalConfig">0 BHK</span>
+              </div>
+              <div>
+                <span class="text-slate-500 block text-[10px]">Possession:</span>
+                <span class="text-emerald-400 font-bold" id="modalPossession">Immediate</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-2">
+            <button onclick="requestFloorPlanBrochure()" class="w-full py-3 bg-terracotta-500 hover:bg-terracotta-400 text-white font-mono text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>Download Architectural CAD &amp; Floor Plan</span>
+            </button>
+            <button onclick="openVipModal('Site Visit for ' + document.getElementById('modalEstateTitle').innerText)" class="w-full py-3 bg-charcoal hover:bg-slate-800 text-slate-200 border border-white/10 font-mono text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2">
+              <i data-lucide="car" class="w-4 h-4"></i>
+              <span>Book Chauffeur Site Tour</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIP Visit / Chauffeur Booking Drawer Modal -->
+  <div id="vipBookingModal" class="fixed inset-0 z-50 hidden bg-midnight/90 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+    <div class="relative w-full max-w-lg bg-obsidian border border-terracotta-400/40 p-6 sm:p-8 my-8 shadow-2xl">
+      <button onclick="closeVipModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-2">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="mb-5">
+        <span class="text-[10px] font-mono uppercase tracking-widest text-terracotta-400">Confidential Private Client Service</span>
+        <h3 class="font-serif text-2xl font-bold text-white mt-1" id="vipModalSubject">Schedule Chauffeur Visit</h3>
+        <p class="text-slate-400 text-xs font-mono mt-1">Mercedes Maybach / Audi A8 complimentary pickup from residence or airport.</p>
+      </div>
+
+      <form id="vipBookingForm" onsubmit="handleVipSubmit(event)" class="space-y-4 text-xs font-mono">
+        <div>
+          <label class="block text-slate-300 uppercase mb-1">Your Full Name</label>
+          <input type="text" required placeholder="e.g. Gautam Singhania" class="w-full bg-charcoal text-white px-3.5 py-2.5 border border-white/10 focus:border-terracotta-400 focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-300 uppercase mb-1">Mobile Contact</label>
+            <div class="flex">
+              <span class="inline-flex items-center px-2.5 bg-slate-800 text-slate-300 border border-r-0 border-white/10 font-mono">+91</span>
+              <input type="tel" required pattern="[0-9]{10}" placeholder="98200 12345" class="w-full bg-charcoal text-white px-3 py-2 border border-white/10 focus:border-terracotta-400 focus:outline-none">
+            </div>
+          </div>
+          <div>
+            <label class="block text-slate-300 uppercase mb-1">Corporate Email</label>
+            <input type="email" required placeholder="gautam@enterprises.com" class="w-full bg-charcoal text-white px-3 py-2 border border-white/10 focus:border-terracotta-400 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-300 uppercase mb-1">Tour Preference</label>
+            <select class="w-full bg-charcoal text-white px-3 py-2 border border-white/10 focus:border-terracotta-400 focus:outline-none">
+              <option>Chauffeur Driven Site Tour</option>
+              <option>4K VR Metaverse Walkthrough</option>
+              <option>Helicopter Helipad Flyover (Select Mansions)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-slate-300 uppercase mb-1">Preferred Date</label>
+            <input type="date" required id="vipDatePicker" class="w-full bg-charcoal text-white px-3 py-2 border border-white/10 focus:border-terracotta-400 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <label class="flex items-center gap-2 cursor-pointer text-slate-300">
+            <input type="checkbox" checked class="accent-terracotta-400">
+            <span>Send confidential property brochure via WhatsApp to this number</span>
+          </label>
+        </div>
+
+        <button type="submit" class="w-full py-3 mt-3 bg-terracotta-500 hover:bg-terracotta-400 text-white font-mono text-xs uppercase tracking-widest font-bold transition">
+          Confirm Private Appointment
+        </button>
+      </form>
+
+      <div id="vipSuccessState" class="hidden text-center py-6">
+        <div class="w-12 h-12 border border-emerald-400 text-emerald-400 mx-auto flex items-center justify-center mb-3">
+          <i data-lucide="check" class="w-6 h-6"></i>
+        </div>
+        <h4 class="font-serif text-xl font-bold text-white">Private Tour Registered</h4>
+        <p class="text-xs text-slate-300 mt-2 font-mono">Our Managing Partner will contact your office within 60 minutes for itinerary alignment.</p>
+        <button onclick="closeVipModal()" class="mt-4 px-6 py-2 border border-white/20 text-xs font-mono uppercase text-slate-300">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-midnight border-t border-white/10 text-slate-400 text-xs py-16 font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        <div class="lg:col-span-2 space-y-4">
+          <span class="font-serif text-2xl font-bold text-white tracking-widest block">
+            VIMANA<span class="text-terracotta-400 font-light">.</span>
+          </span>
+          <p class="text-slate-400 text-xs font-sans leading-relaxed max-w-sm">
+            Curators of high-provenance Indian residential architecture. Licensed under the Real Estate (Regulation and Development) Act, 2016.
+          </p>
+          <div class="text-[11px] text-slate-500">
+            CREDAI Member ID: <strong class="text-slate-400">CR-IND-2026-8819</strong><br>
+            MahaRERA: <strong class="text-slate-400">A51900010992</strong> &bull; KarRERA: <strong class="text-slate-400">PRM/KA/RERA/1251/310/AG/221008</strong>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white uppercase font-bold text-xs mb-3">Private Client Offices</h4>
+          <ul class="space-y-2 text-[11px]">
+            <li>Mumbai: The Capital, BKC, Level 8</li>
+            <li>Bengaluru: The Collection, UB City</li>
+            <li>Delhi NCR: Horizon Two, Golf Course Rd</li>
+            <li>Goa: Heritage Latin Quarter, Fontainhas</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white uppercase font-bold text-xs mb-3">Curated Verticals</h4>
+          <ul class="space-y-2 text-[11px]">
+            <li><a href="portfolio.html" class="hover:text-terracotta-300">Portuguese Goan Havelis</a></li>
+            <li><a href="portfolio.html" class="hover:text-terracotta-300">Worli Cantilevered Duplexes</a></li>
+            <li><a href="portfolio.html" class="hover:text-terracotta-300">Golf Link Estates Gurugram</a></li>
+            <li><a href="portfolio.html" class="hover:text-terracotta-300">Indiranagar Earth Mansions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white uppercase font-bold text-xs mb-3">Private Wealth Desk</h4>
+          <p class="text-slate-300 mb-2 font-bold">+91 98200 99881</p>
+          <p class="text-slate-400 text-[11px]">direct@vimanaestates.com</p>
+          <div class="mt-4 pt-3 border-t border-white/10">
+            <span class="text-terracotta-300 text-[10px] block">Emergency HNI Concierge: 24/7 Available</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-[11px] gap-4">
+        <div>&copy; 2026 Vimana Luxury Realty Pvt Ltd. All Titles Audited by Senior Advocates of High Court.</div>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-white">RERA Dossiers</a>
+          <a href="#" class="hover:text-white">FEMA Advisory Notice</a>
+          <a href="#" class="hover:text-white">Confidentiality Protocol</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp & Direct Ping -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <button onclick="pingWhatsApp()" class="group flex items-center gap-2 bg-charcoal border border-terracotta-400 text-terracotta-300 hover:bg-terracotta-500 hover:text-white px-4 py-3 shadow-2xl transition duration-300 font-mono text-xs uppercase font-bold">
+      <i data-lucide="message-square" class="w-4 h-4 text-emerald-400 group-hover:text-white"></i>
+      <span class="hidden sm:inline">WhatsApp Partner Desk</span>
+    </button>
+  </div>
+
+  <!-- Micro Notification Toast -->
+  <div id="vimanaToast" class="fixed top-24 right-6 z-50 hidden bg-obsidian border border-terracotta-400 text-white font-mono text-xs px-4 py-3 shadow-2xl flex items-center gap-3">
+    <i data-lucide="check" class="w-4 h-4 text-terracotta-300"></i>
+    <span id="toastMsg">Action confirmed</span>
+  </div>
+
+  <script>
+    // State of selected currency: INR, USD, AED
+    let currentCurrency = 'INR';
+    const FX_RATES = {
+      INR: 1,
+      USD: 0.012,     // 1 INR = $0.012 USD (~83.3 INR/USD)
+      AED: 0.044      // 1 INR = 0.044 AED (~22.7 INR/AED)
+    };
+
+    // Authentic Indian Luxury Portfolio
+    const estates = [
+      {
+        id: "est-1",
+        title: "The Casuarina Sea-Verandah Duplex",
+        category: "Sky Villa",
+        city: "Mumbai",
+        locality: "Worli Sea Face, Mumbai",
+        priceInr: 420000000,
+        priceDisplayInr: "₹42.00 Cr",
+        carpetArea: "6,400 sq.ft",
+        builtUpArea: "8,100 sq.ft",
+        bhk: "5 BHK Duplex",
+        vastu: "North-West Arabian Sea View (100% Vastu)",
+        rera: "MahaRERA: P51900024810",
+        possession: "Immediate (Ready to Move)",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+        desc: "Cantilevered wrap-around deck overlooking the Bandra-Worli Sea Link with dedicated private high-speed capsule elevator and 4 reserved valet bays."
+      },
+      {
+        id: "est-2",
+        title: "Palácio de Moira (Restored 1840 Courtyard)",
+        category: "Courtyard Estate",
+        city: "Goa",
+        locality: "Moira, North Goa",
+        priceInr: 165000000,
+        priceDisplayInr: "₹16.50 Cr",
+        carpetArea: "5,800 sq.ft",
+        builtUpArea: "1.2 Acre Orchard",
+        bhk: "4 Suite Villa",
+        vastu: "East Facing Traditional Central Courtyard",
+        rera: "GoaRERA: PRGO05211420",
+        possession: "Fully Restored & Handover Ready",
+        image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1000&q=80",
+        desc: "Heritage Portuguese architecture crafted with oyster shell windows, laterite stone masonry, lap pool surrounded by betel nut palms, and full domestic staff quarters."
+      },
+      {
+        id: "est-3",
+        title: "The Magnolia Pavilions (Total Environment)",
+        category: "Gated Mansion",
+        city: "Bengaluru",
+        locality: "Indiranagar / Defense Colony, Bengaluru",
+        priceInr: 285000000,
+        priceDisplayInr: "₹28.50 Cr",
+        carpetArea: "7,100 sq.ft",
+        builtUpArea: "8,900 sq.ft",
+        bhk: "5 BHK Pavilion",
+        vastu: "Ishanya (North-East) Water Feature Entrance",
+        rera: "KarRERA: PRM/KA/RERA/1251/310/2204",
+        possession: "Q4 2026 (Structural Complete)",
+        image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80",
+        desc: "Earth-sheltered residence featuring landscaped terrace gardens, custom brass wire-cut brick finish, private temperature-controlled cellar, and smart geothermal cooling."
+      },
+      {
+        id: "est-4",
+        title: "The Aralias Signature Golf Suite",
+        category: "Gated Mansion",
+        city: "Delhi NCR",
+        locality: "DLF Phase 5, Golf Course Road, Gurugram",
+        priceInr: 340000000,
+        priceDisplayInr: "₹34.00 Cr",
+        carpetArea: "6,800 sq.ft",
+        builtUpArea: "8,200 sq.ft",
+        bhk: "4 BHK Penthouse",
+        vastu: "North-Facing 18-Hole Championship Golf Course View",
+        rera: "HRERA: 382 of 2017",
+        possession: "Ready To Move",
+        image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=80",
+        desc: "Overlooking the Arnold Palmer golf links with concierge service, club membership privileges, 11-foot finished ceilings, and biometric elevator access."
+      },
+      {
+        id: "est-5",
+        title: "Kohinoor Grand Villa (Jubilee Hills)",
+        category: "Gated Mansion",
+        city: "Hyderabad",
+        locality: "Road No. 36, Jubilee Hills, Hyderabad",
+        priceInr: 520000000,
+        priceDisplayInr: "₹52.00 Cr",
+        carpetArea: "11,500 sq.ft",
+        builtUpArea: "1,200 Sq. Yards Plot",
+        bhk: "6 BHK Mansion",
+        vastu: "100% Vastu Shastra Audited by Tirupati Scholars",
+        rera: "TSRERA: P02500001928",
+        possession: "Ready To Move",
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80",
+        desc: "Opulent palatial layout with double-height royal foyer, Italian Travertine facade, private screening theater, and parking bay for 8 luxury vehicles."
+      },
+      {
+        id: "est-6",
+        title: "Villa Fontainhas Heritage Mews",
+        category: "Courtyard Estate",
+        city: "Goa",
+        locality: "Fontainhas Latin Quarter, Panaji",
+        priceInr: 98000000,
+        priceDisplayInr: "₹9.80 Cr",
+        carpetArea: "3,900 sq.ft",
+        builtUpArea: "4,600 sq.ft",
+        bhk: "3 BHK Heritage Mews",
+        vastu: "South-East Agneya Compliant Kitchen",
+        rera: "GoaRERA: PRGO09221890",
+        possession: "Immediate Handover",
+        image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80",
+        desc: "Vibrant ochre-walled residence in Asia’s only conserved Latin quarter. Teakwood rafter ceilings, Portuguese azulejo tiling, and secluded courtyard pool."
+      }
+    ];
+
+    // Format currency dynamically based on selected toggle
+    function formatCurrency(inrAmount) {
+      if (currentCurrency === 'INR') {
+        const inCr = (inrAmount / 10000000).toFixed(2);
+        return `₹${inCr} Cr`;
+      } else if (currentCurrency === 'USD') {
+        const inUsd = (inrAmount * FX_RATES.USD).toLocaleString('en-US', { maximumFractionDigits: 0 });
+        return `$${inUsd}`;
+      } else if (currentCurrency === 'AED') {
+        const inAed = (inrAmount * FX_RATES.AED).toLocaleString('en-US', { maximumFractionDigits: 0 });
+        return `AED ${inAed}`;
+      }
+      return `₹${(inrAmount / 10000000).toFixed(2)} Cr`;
+    }
+
+    function changeCurrency(curr) {
+      currentCurrency = curr;
+      renderEstates(estates);
+      calculateNriRoi();
+      calculateStampAndEmi();
+      // Update highlight price in hero
+      const highlight = document.getElementById('heroHighlightPrice');
+      if (highlight) {
+        highlight.innerText = formatCurrency(385000000);
+      }
+      showToast(`Currency updated to ${curr}`);
+    }
+
+    // Render properties in the architectural grid
+    function renderEstates(list) {
+      const container = document.getElementById('estatesContainer');
+      if (!list || list.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-16 text-center text-slate-400 font-mono">
+            <p>No estates match the selected parameters. Reach out to our confidential desk for unlisted off-market mansions.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = list.map(item => `
+        <div class="bg-obsidian border border-white/10 hover:border-terracotta-400/50 transition-all duration-300 flex flex-col group">
+          <!-- Image frame -->
+          <div class="relative h-64 overflow-hidden">
+            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.88]">
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-transparent to-transparent"></div>
+
+            <div class="absolute top-3 left-3 flex items-center gap-1.5">
+              <span class="bg-charcoal/90 text-terracotta-300 border border-white/10 text-[9px] font-mono uppercase tracking-wider px-2 py-0.5">
+                ${item.category}
+              </span>
+              <span class="bg-charcoal/90 text-slate-300 border border-white/10 text-[9px] font-mono px-2 py-0.5">
+                ${item.city}
+              </span>
+            </div>
+
+            <div class="absolute bottom-3 left-3 right-3 flex justify-between items-end">
+              <div>
+                <span class="text-[9px] font-mono text-slate-400 uppercase tracking-widest block">Valuation</span>
+                <span class="font-serif text-xl font-bold text-white">${formatCurrency(item.priceInr)}</span>
+              </div>
+              <span class="text-[10px] font-mono text-emerald-400 bg-black/60 px-2 py-0.5 border border-emerald-500/20">
+                ${item.possession}
+              </span>
+            </div>
+          </div>
+
+          <!-- Body details -->
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-1">
+                <span>${item.locality}</span>
+                <span class="text-terracotta-300 font-bold">${item.bhk}</span>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-white group-hover:text-champagne-300 transition-colors">${item.title}</h3>
+              <p class="text-slate-400 text-xs font-light mt-2 line-clamp-2">${item.desc}</p>
+            </div>
+
+            <!-- Specs Grid -->
+            <div class="pt-3 border-t border-white/10 space-y-2">
+              <div class="flex justify-between text-[11px] font-mono text-slate-300">
+                <span>Carpet: <strong>${item.carpetArea}</strong></span>
+                <span>Super Built: <strong>${item.builtUpArea}</strong></span>
+              </div>
+
+              <!-- Vastu & RERA with copy button -->
+              <div class="flex items-center justify-between text-[10px] font-mono text-slate-400 pt-1">
+                <span class="text-amber-200 flex items-center gap-1">
+                  <i data-lucide="compass" class="w-3 h-3 text-terracotta-400"></i> ${item.vastu.split('(')[0]}
+                </span>
+                <button onclick="copyRera('${item.rera}')" class="hover:text-white transition flex items-center gap-1 text-[9px] text-slate-400 underline">
+                  <span>${item.rera.split(':')[0]}</span>
+                  <i data-lucide="copy" class="w-3 h-3"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="grid grid-cols-2 gap-2 pt-2">
+              <button onclick="openEstateDetail('${item.id}')" class="py-2.5 bg-charcoal hover:bg-slate-800 text-slate-200 border border-white/10 font-mono text-xs uppercase tracking-wider font-semibold text-center transition">
+                Floor Plans
+              </button>
+              <button onclick="openVipModal('${item.title}')" class="py-2.5 bg-terracotta-500 hover:bg-terracotta-400 text-white font-mono text-xs uppercase tracking-wider font-semibold text-center transition">
+                Book Visit
+              </button>
+            </div>
+
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    // Filter via Tabs
+    function filterByTab(cat) {
+      document.querySelectorAll('.category-pill').forEach(btn => {
+        btn.classList.remove('bg-terracotta-500', 'text-white', 'border-terracotta-400');
+        btn.classList.add('bg-charcoal', 'text-slate-300', 'border-white/10');
+      });
+      event.target.classList.remove('bg-charcoal', 'text-slate-300', 'border-white/10');
+      event.target.classList.add('bg-terracotta-500', 'text-white', 'border-terracotta-400');
+
+      if (cat === 'all') {
+        renderEstates(estates);
+      } else {
+        const filtered = estates.filter(e => e.category === cat);
+        renderEstates(filtered);
+      }
+    }
+
+    // Main search filter from Hero
+    function applyMainFilter() {
+      const city = document.getElementById('heroRegionSelect').value;
+      const typo = document.getElementById('heroTypologySelect').value;
+      const budget = document.getElementById('heroBudgetSelect').value;
+      const vastuOnly = document.getElementById('heroVastuOnly').checked;
+
+      let result = [...estates];
+
+      if (city !== 'all') {
+        result = result.filter(e => e.city === city);
+      }
+      if (typo !== 'all') {
+        result = result.filter(e => e.category === typo);
+      }
+      if (budget !== 'all') {
+        if (budget === '5cr') result = result.filter(e => e.priceInr <= 50000000);
+        else if (budget === '15cr') result = result.filter(e => e.priceInr <= 150000000);
+        else if (budget === '50cr') result = result.filter(e => e.priceInr >= 150000000);
+      }
+      if (vastuOnly) {
+        result = result.filter(e => e.vastu.includes('Ishanya') || e.vastu.includes('North'));
+      }
+
+      renderEstates(result);
+      document.getElementById('property-matrix').scrollIntoView({ behavior: 'smooth' });
+      showToast(`Showing ${result.length} filtered sanctuaries`);
+    }
+
+    // Modal Details Viewer
+    function openEstateDetail(estateId) {
+      const estate = estates.find(e => e.id === estateId);
+      if (!estate) return;
+
+      document.getElementById('modalEstateImg').src = estate.image;
+      document.getElementById('modalEstateTitle').innerText = estate.title;
+      document.getElementById('modalEstateCity').innerText = `${estate.category} • ${estate.city}`;
+      document.getElementById('modalEstatePrice').innerText = formatCurrency(estate.priceInr);
+      document.getElementById('modalEstateDesc').innerText = estate.desc;
+      document.getElementById('modalCarpetArea').innerText = estate.carpetArea;
+      document.getElementById('modalBuiltArea').innerText = estate.builtUpArea;
+      document.getElementById('modalConfig').innerText = estate.bhk;
+      document.getElementById('modalPossession').innerText = estate.possession;
+      document.getElementById('modalVastuDetail').innerText = estate.vastu;
+      document.getElementById('modalReraDetail').innerText = estate.rera;
+
+      document.getElementById('propertyDetailModal').classList.remove('hidden');
+    }
+
+    function closePropertyDetailModal() {
+      document.getElementById('propertyDetailModal').classList.add('hidden');
+    }
+
+    function requestFloorPlanBrochure() {
+      showToast("Architectural blueprints & CAD dossier requested. Sent to your email.");
+      closePropertyDetailModal();
+    }
+
+    // Copy RERA Registration to clipboard
+    function copyRera(str) {
+      const tempInput = document.createElement("input");
+      tempInput.value = str;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      showToast(`Copied ${str} to clipboard`);
+    }
+
+    // NRI ROI Calculator Logic
+    function calculateNriRoi() {
+      const capInr = parseFloat(document.getElementById('nriCapitalSlider').value);
+      const horizonYears = parseInt(document.getElementById('nriHorizonSelect').value);
+      const cagrRate = parseFloat(document.getElementById('nriMarketSelect').value) / 100;
+
+      // Compound appreciation: P * (1 + r)^n
+      const exitValue = capInr * Math.pow(1 + cagrRate, horizonYears);
+      
+      // Assumed 3.7% avg rental yield annually
+      const rentalAnnual = capInr * 0.037;
+      const totalRentalIncome = rentalAnnual * horizonYears;
+
+      const netGain = (exitValue + totalRentalIncome) - capInr;
+      const totalRoiPercent = ((netGain / capInr) * 100).toFixed(1);
+
+      document.getElementById('nriAllocationDisplay').innerText = `${formatCurrency(capInr)} (${(capInr * FX_RATES.USD / 1000000).toFixed(2)}M USD)`;
+      document.getElementById('nriExitVal').innerText = formatCurrency(exitValue);
+      document.getElementById('nriExitUsd').innerText = `~$${((exitValue * FX_RATES.USD) / 1000000).toFixed(2)}M USD`;
+      document.getElementById('nriRentalTotal').innerText = formatCurrency(totalRentalIncome);
+      document.getElementById('nriTotalRoi').innerText = `+${totalRoiPercent}%`;
+    }
+
+    // Stamp Duty & Registration Calculation
+    function calculateStampAndEmi() {
+      const agreementVal = parseFloat(document.getElementById('stampPropValue').value);
+      const stateKey = document.getElementById('stateStampSelect').value;
+      const downPaymentPct = parseFloat(document.getElementById('downPaymentSelect').value);
+      const interestRate = parseFloat(document.getElementById('loanInterestInput').value);
+      const tenureYears = parseInt(document.getElementById('loanTenureSelect').value);
+
+      // State stamp duty percentage map
+      const rates = {
+        'MH_M': 0.06,  // Maharashtra 6%
+        'KA': 0.05,    // Karnataka 5%
+        'DL': 0.06,    // Delhi 6%
+        'TS': 0.075,   // Telangana 7.5%
+        'GOA': 0.045   // Goa 4.5%
+      };
+
+      const dutyRate = rates[stateKey] || 0.05;
+      const stampDuty = agreementVal * dutyRate;
+      const regCharges = 30000; // Flat registration fee ceiling in prime states
+      const grandTotal = agreementVal + stampDuty + regCharges;
+
+      // EMI Calculation on Financed portion
+      const loanAmount = agreementVal * (1 - downPaymentPct);
+      let monthlyEmi = 0;
+
+      if (loanAmount > 0) {
+        const monthlyRate = (interestRate / 12) / 100;
+        const totalMonths = tenureYears * 12;
+        monthlyEmi = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+      }
+
+      document.getElementById('statutoryGrandTotal').innerText = formatCurrency(grandTotal);
+      document.getElementById('statutoryBasePrice').innerText = formatCurrency(agreementVal);
+      document.getElementById('statutoryStampDuty').innerText = formatCurrency(stampDuty);
+      document.getElementById('statutoryRegCharges').innerText = `₹${regCharges.toLocaleString('en-IN')}`;
+      
+      if (loanAmount <= 0) {
+        document.getElementById('statutoryMonthlyEmi').innerText = "₹0 (100% Equity)";
+      } else {
+        document.getElementById('statutoryMonthlyEmi').innerText = `₹${Math.round(monthlyEmi).toLocaleString('en-IN')} /mo`;
+      }
+    }
+
+    function syncStampFromSlider(val) {
+      document.getElementById('stampPropValue').value = val;
+      document.getElementById('sliderValueInCr').innerText = formatCurrency(Number(val));
+      calculateStampAndEmi();
+    }
+
+    // VIP Modal handlers
+    function openVipModal(subject) {
+      document.getElementById('vipModalSubject').innerText = subject || "Schedule VIP Chauffeur Tour";
+      document.getElementById('vipBookingForm').classList.remove('hidden');
+      document.getElementById('vipSuccessState').classList.add('hidden');
+
+      const nextDay = new Date();
+      nextDay.setDate(nextDay.getDate() + 2);
+      document.getElementById('vipDatePicker').value = nextDay.toISOString().split('T')[0];
+
+      document.getElementById('vipBookingModal').classList.remove('hidden');
+    }
+
+    function closeVipModal() {
+      document.getElementById('vipBookingModal').classList.add('hidden');
+    }
+
+    function handleVipSubmit(e) {
+      e.preventDefault();
+      document.getElementById('vipBookingForm').classList.add('hidden');
+      document.getElementById('vipSuccessState').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function toggleMobileNav() {
+      const flyout = document.getElementById('mobileNavFlyout');
+      const openIcon = document.getElementById('mobileMenuOpenIcon');
+      const closeIcon = document.getElementById('mobileMenuCloseIcon');
+
+      if (flyout.classList.contains('hidden')) {
+        flyout.classList.remove('hidden');
+        openIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        flyout.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    }
+
+    function pingWhatsApp() {
+      showToast("Connecting to Vimana Managing Partner (+91 98200 99881)...");
+      setTimeout(() => {
+        window.open('https://api.whatsapp.com/send?phone=919820099881&text=Hello%20Vimana%20Estates%2C%20I%20wish%20to%20review%20confidential%20portfolio%20details.', '_blank');
+      }, 700);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('vimanaToast');
+      const msg = document.getElementById('toastMsg');
+      msg.innerText = message;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3500);
+    }
+
+    // Modal dismissal backdrop
+    window.addEventListener('click', function(e) {
+      const vipModal = document.getElementById('vipBookingModal');
+      const propModal = document.getElementById('propertyDetailModal');
+      if (e.target === vipModal) closeVipModal();
+      if (e.target === propModal) closePropertyDetailModal();
+    });
+
+    // Initialize on window load
+    window.onload = function() {
+      renderEstates(estates);
+      calculateNriRoi();
+      calculateStampAndEmi();
+      lucide.createIcons();
+    };
+  </script>
+
+  <script>
+    window.addEventListener('load',()=>document.getElementById('pageLoader')?.classList.add('done'));
+    const progress=document.getElementById('scrollProgress');
+    window.addEventListener('scroll',()=>{ const h=document.documentElement.scrollHeight-innerHeight; progress.style.width=(h?scrollY/h*100:0)+'%'; },{passive:true});
+    const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    document.querySelectorAll('.magnetic').forEach(el=>{el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.08}px,${(e.clientY-r.top-r.height/2)*.08}px)`});el.addEventListener('mouseleave',()=>el.style.transform='')});
+  </script>
+</body>
+</html>
